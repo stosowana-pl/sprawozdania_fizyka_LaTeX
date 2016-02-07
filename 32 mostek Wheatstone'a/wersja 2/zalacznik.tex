@@ -1,0 +1,29 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1cm]{geometry}
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+\usepackage{siunitx}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{nopageno}
+
+\begin{document}
+\section{Porównanie wartości obliczonej z wartością zmierzoną}
+\subsection{Wartości zmierzone}
+\begin{align*}
+R_1 &= 9.05 \pm 0.18 \si{\ohm}\\
+R_2 &= 16.59 \pm 0.38 \si{\ohm}\\
+R_1 + R_2 &= 24.37 \pm 0.77\si{\ohm}\\
+1/\left(\frac{1}{R_1} + \frac{1}{R_2}\right) &= 5.590 \pm 0.090\si{\ohm}\\
+\end{align*}
+\subsection{Wartości obliczone}
+\begin{align*}
+u(R_1 + R_2) &= \sqrt{u(R_1)^2 + u(R_2)^2} = 0.42\si{\ohm}\\
+u(R_p) &= \sqrt{\left(\frac{R_2^2}{(R_1 + R_2)^2}\cdot u(R_1)\right)^2 + \left(\frac{R_1^2}{(R_1 + R_2)^2}\cdot u(R_2)\right)^2} = 0.089\si{\ohm}\\\\
+R_1 + R_2 &= 25.64 \pm 0.42\si{\ohm}\\
+R_p = 1/\left(\frac{1}{R_1} + \frac{1}{R_2}\right) &= 5.860 \pm 0.089\si{\ohm}\\
+\end{align*}
+\subsection{Wnioski}
+Dla $k = 2$ wartości zmierzone i obliczone mieszczą się w granicach wyznaczanych przez niepewności pomiarowe.
+\end{document}
