@@ -1,0 +1,53 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1cm]{geometry}
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+\usepackage{siunitx}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{nopageno}
+
+\newenvironment{Figure}
+  {\par\medskip\noindent\minipage{\linewidth}}
+  {\endminipage\par\medskip}
+
+\title{\textbf{Elektroliza - opracowanie danych}}
+\author{Karol Pietruszka\\Konrad Lewandowski}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Parametry doświadczenia}
+Czas trwania elektrolizy $t = 25\si{\min} = \textbf{1500}\si{\s}$ \\
+Natężenie prądu przepływającego przez elektrolit $I = \textbf{0.6}\si{\A}$\\
+\\
+Klasa amperomierza: $0.5\si{\A}$\\
+Zakres amperomierza: $0.75\si{\A}$\\
+Niepewność znamionowa wagi $\Delta m = 1\si{\mg}$\\
+Czas reakcji człowieka (pomiar czasu) $\Delta t = 268\si{\ms}$
+\section{Pomiary masy elektrod}
+
+\begin{tabular}{|c|r|r|r|}
+\hline
+   & \textbf{Przed} & \textbf{Po} & \textbf{$\Delta m$} \\ \hline
+$m_1 [\si{\g}]$ & 77.664  & 77.483  & -0.181            \\ \hline
+$m_2 [\si{\g}]$ & 113.525 & 113.808 & 0.283 \\ \hline
+$m_3 [\si{\g}]$ & 95.777  & 95.644  & -0.133       \\ \hline
+\end{tabular}
+
+\section{Wyznaczenie równoważnika elektrochemicznego miedzi}
+Wartość obliczona $k_{\text{Cu}} = \frac{\Delta m_2}{I \cdot t} = \frac{0.283\si{\g}}{1500\si{\s} \cdot 0.6 \si{\A}} = 0.31(4)\si{\frac{\mg}{\coulomb}}$ \\\\
+Wartość tablicowa $k_{\text{Cu}} = 0.3294\si{\frac{\mg}{\coulomb}}$
+
+\section{Niepewność pomiarowe}
+Niepewność pomiaru masy $u(m) = \frac{\Delta m}{\sqrt{3}} = 0.58\si{\mg}$\\\\
+Niepewność pomiaru natężenia prądu $u(I) = \frac{0.5\cdot0.75}{100} = 3.75\si{\mA}$\\\\
+Niepewność pomiaru czasu $u(t) = \frac{\Delta t}{\sqrt{3}} = 154.73\si{\ms}$\\\\
+Niepewność równoważnika elektrochemicznego:\\
+$u(k_{\text{Cu}}) = k_{\text{Cu}} \cdot \sqrt{\left(\frac{u(m)}{m}\right)^2 + \left(\frac{u(I)}{I}\right)^2 + \left(\frac{u(t)}{t}\right)^2} = 0.02\si{\frac{\mg}{\coulomb}}$
+\section{Wynik}
+$k_{\text{Cu}} = (0.31 \pm 0.02) \si{\frac{\mg}{\coulomb}}$
+\end{document}

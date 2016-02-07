@@ -1,0 +1,39 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1cm]{geometry}
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+\usepackage{siunitx}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{nopageno}
+\usepackage{subcaption}
+
+\begin{document}
+
+\section{Niepewności pomiarowe i obliczenia}
+\noindent
+$\overline{\Delta h}$ - średnia grubość pozorna płytki \\
+$H$ - Grubość rzeczywista
+\begin{flalign}
+u(H) &= \frac{0.01\si\mm}{\sqrt{3}} = 0.0058\si\mm \text{ - na podstawie działki elementarnej śruby mikrometrycznej}&&
+\end{flalign}
+\subsection{Szkło}
+\begin{flalign}
+u(H) &= 0.00043\si\mm &&\\
+u(n) &= n\sqrt{\left(\frac{u(\overline{\Delta h})}{\overline{\Delta h}}\right)^2 + \left(\frac{u(H)}{H}\right)^2} = 0.0023&&
+\end{flalign}
+\subsection{Pleksiglas}
+\begin{flalign}
+u(H) &= 0.00024\si\mm &&\\
+u(n) &= n\sqrt{\left(\frac{u(\overline{\Delta h})}{\overline{\Delta h}}\right)^2 + \left(\frac{u(H)}{H}\right)^2} = 0.0041&&
+\end{flalign}
+
+\section{Wnioski}
+Ze względu na niedokładności metody pomiarowej (organoleptyczne ustawianie ostrości mikroskopu) wyniki odbiegają od wartości tablicowych, a błędy te są na tyle duże, że niestety uniemożliwiają pokazanie zjawiska dyspersji.
+\Large\begin{flalign*}
+n_{szkła} &= 1.91 \pm 0.0023\hspace{1em} n_{tab} \in (1.4, 1.9)\\
+n_{pleksi} &= 1.52 \pm 0.0041\hspace{1em} n_{tab} = 1.49
+\end{flalign*}
+
+\end{document}

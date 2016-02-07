@@ -1,0 +1,223 @@
+% Tutaj robimy Mostek Wheatstone'a
+
+\documentclass[12pt]{article}
+\usepackage[margin=1cm]{geometry}
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+\usepackage{siunitx}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{nopageno}
+\usepackage{tikz}
+\usepackage{circuitikz}
+
+\ctikzset{bipoles/ammeter/text rotate/.initial=0,% <=new key
+rotation/.style={bipoles/ammeter/text rotate=#1},% style for ease introduction in code
+}
+
+\makeatletter
+\pgfcircdeclarebipole{}{\ctikzvalof{bipoles/ammeter/height}}{ammeter}{\ctikzvalof{bipoles/ammeter/height}}{\ctikzvalof{bipoles/ammeter/width}}{
+    \def\pgf@circ@temp{right}
+    \ifx\tikz@res@label@pos\pgf@circ@temp
+        \pgf@circ@res@step=-1.2\pgf@circ@res@up
+    \else
+        \def\pgf@circ@temp{below}
+        \ifx\tikz@res@label@pos\pgf@circ@temp
+            \pgf@circ@res@step=-1.2\pgf@circ@res@up
+        \else
+            \pgf@circ@res@step=1.2\pgf@circ@res@up
+        \fi
+    \fi
+
+    \pgfpathmoveto{\pgfpoint{\pgf@circ@res@left}{\pgf@circ@res@zero}}       
+    \pgfpointorigin \pgf@circ@res@other =  \pgf@x  \advance \pgf@circ@res@other by -\pgf@circ@res@up
+    \pgfpathlineto{\pgfpoint{\pgf@circ@res@other}{\pgf@circ@res@zero}}
+    \pgfusepath{draw}
+
+    \pgfsetlinewidth{\pgfkeysvalueof{/tikz/circuitikz/bipoles/thickness}\pgfstartlinewidth}
+
+        \pgfscope
+            \pgfpathcircle{\pgfpointorigin}{.9\pgf@circ@res@up}
+            \pgfusepath{draw}       
+        \endpgfscope    
+
+    \pgftransformrotate{\ctikzvalof{bipoles/ammeter/text rotate}}% <= magic line
+    \pgfsetlinewidth{\pgfstartlinewidth}
+
+    \pgfsetarrowsend{latex}
+    \pgfpathmoveto{\pgfpoint{\pgf@circ@res@other}{\pgf@circ@res@down}}
+    \pgfpathlineto{\pgfpoint{-\pgf@circ@res@other}{\pgf@circ@res@up}}
+    \pgfusepath{draw}
+    \pgfsetarrowsend{}
+
+
+    \pgfpathmoveto{\pgfpoint{-\pgf@circ@res@other}{\pgf@circ@res@zero}}
+    \pgfpathlineto{\pgfpoint{\pgf@circ@res@right}{\pgf@circ@res@zero}}
+    \pgfusepath{draw}
+
+
+    \pgfnode{circle}{center}{\textbf{A}}{}{}
+}
+\makeatother
+
+
+\newenvironment{Figure}
+  {\par\medskip\noindent\minipage{\linewidth}}
+  {\endminipage\par\medskip}
+  
+ \newcommand{\moment}{\si{\kg \times \m^{2}}}
+
+\title{\textbf{Mostek Wheatstone'a - sprawozdanie}}
+\author{Karol Pietruszka\\Konrad Lewandowski}
+\date{}
+
+\begin{document}
+\noindent
+\begin{center}
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+Wydział: EAIIB                                                       & \begin{tabular}[c]{@{}l@{}}Konrad Lewandowski\\ Karol Pietruszka\end{tabular} & 2016          & pt. 9.45        & Zespół: 8 \\ \hline
+\begin{tabular}[c]{@{}l@{}}PRACOWNIA\\ FIZYCZNA\\ WFiIS\end{tabular} & \multicolumn{3}{l|}{Temat: Mostek Wheatstone'a}                                                                    & 32        \\ \hline
+\begin{tabular}[c]{@{}l@{}}Data wykonania\\ 7.01.16\end{tabular}    & \begin{tabular}[c]{@{}l@{}}Data oddania:\\ 8.01.16\end{tabular}              & Zwrot do pop. & Data zaliczenia & Ocena     \\[10ex] \hline
+\end{tabular}
+\end{center}
+\vspace{2em}
+
+\section{Wstęp}
+Celem laboratorium było wyznaczenie wartości dwóch nieznanych oporów $R_1, R_2$ oraz ich połączenia szeregowego i równoległego. Finalnie należało obliczyć wartość nieznanego oporu $R_3$ na podstawie analizy połączenia mieszanego wszystkich tych oporów.
+\begin{figure}[h!]
+\begin{center}
+\begin{circuitikz}
+      \draw (0,0)
+      to[R=$R_1$] (2,0);
+      
+      \draw (3, 0)
+      to[R=$R_2$] (5,0);
+      
+      \draw (0, -3)
+      to[R=$R_1$] (2,-3)
+      to[short] (3, -3)
+      to[R=$R_1$] (5,-3);
+      
+      \draw (7, 0)
+      to[short, -*] (8, 0)
+      to[short] (8, .5)
+      to[R=$R_1$] (10, .5)
+      to[short] (10, 0);
+      
+      \draw (8, 0)
+      to[short] (8, -.5)
+      to[R, l_=$R_2$] (10, -.5)
+      to[short] (10, 0)
+      to[short, *-] (11, 0);
+      
+      \draw (7, -3)
+      to[short, -*] (8, -3)
+      to[short] (8, -2.5)
+      to[R=$R_2$] (10, -2.5)
+      to[short] (10, -3);
+      
+      \draw (8, -3)
+      to[short] (8, -3.5)
+      to[R, l_=$R_3$] (10, -3.5)
+      to[short] (10, -3)
+      to[R=$R_1$, *-] (12, -3);
+      
+      
+\end{circuitikz}
+\end{center}
+\caption{Analizowane kombinacje}
+\end{figure}
+
+\begin{figure}[h!]
+\begin{center}
+\begin{circuitikz}
+\ctikzset { label/align = straight }
+      \draw (0,0)
+      to[ammeter, rotation=-90, -*] (0, 4)
+      to[R, l_=$R_x$, -*] (-2, 2)
+      to[R, l_=$R_z$, -*] (0, 0)
+      to[short] (1, 0)
+      to[R, mirror] (1, 4)
+      to[short] (0, 4);
+      
+      \draw (-2,2)
+      to[short] (-2, -1)
+      to[battery1, l_=$3.6\si{\V}$, i=$\si{350\mA}$] (2, -1)
+      to[short] (2, 2);
+      
+      \draw[-latex] (2, 2) -- (1.4, 2);
+      
+      \draw[|-|] (3, 0) -- (3, 2) node[midway, right] {$l$};
+      
+      \draw[|-|] (4, 0) -- (4, 4) node[midway, right] {$1\si{\m}$};
+      
+\end{circuitikz}
+\end{center}
+\caption{Konfiguracja mostka pomiarowego i opis oznaczeń}
+\end{figure}      
+
+\newpage
+\section{Wyniki pomiarów oraz niepewności pomiarowe}
+$R_x = R_z \cdot \frac{l}{100 - l}, u(R_x) = \sqrt{\frac{\sum\limits_{i=1}^n\left(R_i - \overline{R_x}\right)^2}{n(n-1)}}$\\[1em]
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+$R_z [\si{\ohm}]$ & 2  & 5  & 8  & 10 & 15 & 20   & 25 & 30 & 40 & 50   \\ \hline
+$l [\si{\cm}]$  & 81 & 63 & 55 & 45 & 47 & 31.5 & 27 & 24 & 19 & 15.5 \\ \hline
+$R_1 [\si{\ohm}]$ & 8.53 & 8.51 & 9.78 & 8.18 & \textbf{13.30} & 9.20 & 9.25 & 9.47 & 9.38 & 9.17 \\ \hline
+\end{tabular}\\[1em]
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+$R_z [\si{\ohm}]$ & 2  & 5  & 7  & 9 & 10 & 20 & 30 & 40 & 50 & 60   \\ \hline
+$l [\si{\cm}]$  & 85 & 75 & 69 & 64 & 61 & 45 & 37 & 30 & 26 & 23.5 \\ \hline
+$R_2 [\si{\ohm}]$ & \textbf{11.33} & 15.00 & 15.58 & 16.00 & 15.64 & 16.36 & 17.62 & 17.14 & 17.57 & 18.43 \\ \hline
+\end{tabular}\\[1em]
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+$R_z [\si{\ohm}]$ & 2  & 5  & 7  & 9 & 10 & 20 & 30 & 40 & 50 & 60   \\ \hline
+$l [\si{\cm}]$  & 89 & 81 & 75 & 72 & 70 & 56 & 45 & 40 & 35 & 31 \\ \hline
+$R_1 + R_2 [\si{\ohm}]$ & \textbf{16.18} & 21.32 & 21.00 & 23.14 & 23.33 & 25.45 & 24.55 & 26.67 & 26.92 & 26.96 \\ \hline
+\end{tabular}\\[1em]
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+$R_z [\si{\ohm}]$ & 2  & 5  & 7  & 9 & 10 & 20 & 30 & 40 & 50 & 60   \\ \hline
+$l [\si{\cm}]$  & 68 & 52 & 45 & 39 & 36 & 21 & 16 & 13 & 11 & 8 \\ \hline
+$1/\left(\frac{1}{R_1} + \frac{1}{R_2}\right) [\si{\ohm}]$ & \textbf{4.25} & 5.42 & 5.73 & 5.75 & 5.62 & 5.32 & 5.71 & 5.98 & \textbf{6.18} & 5.22 \\ \hline
+\end{tabular}\\[1em]
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+$R_z [\si{\ohm}]$ & 2  & 5  & 7  & 9 & 10 & 20 & 30 & 40 & 50 & 60   \\ \hline
+$l [\si{\cm}]$  & 85 & 78.5 & 73 & 68 & 63 & 68 & 40 & 35 & 29 & 26 \\ \hline
+$1/\left(\frac{1}{R_1} + \frac{1}{R_2}\right) [\si{\ohm}]$ & \textbf{11.33} & 18.26 & 18.93 & 19.12 & 17.03 & \textbf{42.50} & 20.00 & 21.54 & 20.42 & 21.08 \\ \hline
+\end{tabular}
+
+\noindent
+\begin{minipage}[t]{.45\textwidth}
+\begin{align*}
+R_1 &= 9.05 \si{\ohm}\\
+R_2 &= 16.59 \si{\ohm}\\
+R_1 + R_2 &= 24.37 \si{\ohm}\\
+R_p =1/\left(\frac{1}{R_1} + \frac{1}{R_2}\right) &= 5.59 \si{\ohm}\\
+R_m = 1/\left(\frac{1}{R_2} + \frac{1}{R_3}\right) + R_1 &= 19.55 \si{\ohm}\\
+R_3 = \frac{R_2 R_m-R_1 R_2}{-R_m+R_1+R_2} &= 28.6 \si{\ohm}\\
+\end{align*}
+\end{minipage}\hfill
+\begin{minipage}[t]{.45\textwidth}
+\begin{align*}
+u(R_1) &= 0.18\si{\ohm}\\
+u(R_2) &= 0.38\si{\ohm}\\
+u(R_1 + R_2) &= 0.009\si{\ohm}\\
+u(R_p) &= 0.77\si{\ohm}\\
+u(R_m) &= 0.53\si{\ohm}\\
+u(R_3) &= 0.19\si{\ohm}\\ 
+\end{align*}
+\end{minipage}
+\begin{align*}
+u(R_3) &= \small\sqrt{\left(\frac{\partial R_3}{\partial R_1}u(R_1)\right)^2 + \left(\frac{\partial R_3}{\partial R_2}u(R_2)\right)^2 + \left(\frac{\partial R_3}{\partial R_m}u(R_m)\right)^2 }
+\end{align*}
+
+
+\section{Wnioski}
+Mostek Wheatstone'a ze względu na duże niedokładności pomiarowe (nieliniowosć oporu drutu w rezystorze nastawnym, brak dokładnie skalibrowanych rezystorów odniesienia oraz błędy odczytu amperomierza analogowego) nadaje się tylko do pomiaru dużych rezystancji (rzędu kiloomów).
+\end{document}
