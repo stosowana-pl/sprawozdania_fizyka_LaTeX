@@ -1,0 +1,392 @@
+\documentclass{article}
+
+\usepackage{polski}
+\usepackage[UTF8]{inputenc}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{multirow}
+\usepackage{changepage}
+\usepackage[export]{adjustbox}
+\usepackage{wrapfig}
+
+
+\title{Sprawozdanie}
+\begin{document}
+	
+	\begin{center}
+		\bgroup
+		\def\arraystretch{1.5}
+		\begin{tabular}{|c|c|c|c|c|c|}
+			\hline
+			EAIiIB & \multicolumn{2}{|c|}{\begin{tabular}{@{}c@{}}Autor 1 \\Autor 2\end{tabular}} & Rok II & Grupa 5 & Zespół 6 \\
+			\hline
+			\multicolumn{3}{|c|}{\begin{tabular}{c}Temat: \\ Fale podłużne w ciałach stałych \end{tabular}} & 
+			\multicolumn{3}{|c|}{\begin{tabular}{c}Numer ćwiczenia: \\ 29 \end{tabular}} \\
+			\hline
+			Data wykonania & Data oddania & Zwrot do poprawki & Data oddania & Data zaliczenia & Ocena \\[8ex]
+			\hline
+		\end{tabular}
+		\egroup
+	\end{center}  
+	
+	%WSTEP
+	\section{Cel ćwiczenia}
+	Wyznaczenie modułu Younga dla różnych materiałów na podstawie pomiaru prędkości rozchodzenia się fali dźwiękowej w pręcie.
+	
+	\section{Wstęp teoretyczny}
+	Fala podłużna w pręcie powstaje na skutek chwilowego wychylenia się fragment pręta z położenia równowagi i następujących po nim drgań. Drgania te, dzięki sprężystości ośrodka, mogą być przekazywane dalej i mogą rozchodzić się po całym ośrodku. Szybkość rozchodzenia się fali zależy od bezwładności i sprężystości ośrodka, w którym się rozchodzi. Po przekształceniach prędkość wynosi $v=\sqrt{\frac{E}{\rho}}$.
+	Moduł Younga z powyższego równania jest równy $E=\rho v^2$.
+	Falę dźwiękową w pręcie można przybliżyć jako złożenie drgań harmonicznych sinusoidalnych. Częstotliwości harmoniczne są wielokrotnością częstotliwości podstawowej. Długość fali z tego wynosi $\lambda = \frac{2l}{n} $.
+	Mając częstotliwość fali oraz $\lambda$ można obliczyć prędkość ze wzoru: $v=f\lambda$.
+	Podstawiając do wzoru na moduł Younga wychodzi $E=\rho f^2 \lambda^2$
+	
+	\section{Układ pomiarowy}
+	Zestaw ćwiczeniowy stanowi:
+	\begin{enumerate}
+		\item Komputer stacjonarny z zainstalowanym oprogramowaniem Zelscope i podpiętym mikrofonem.
+		\item Zestaw 7 prętów.
+		\item Młotek.
+		\item Przyrządy miernicze suwmiarka, miarka oraz waga.
+		
+	\end{enumerate}
+	
+	
+	\section{Wykonanie ćwiczenia}
+	\begin{enumerate}
+		\item Pomiar wymiarów prętów lub próbek materiałów z których zostały wykonane pręty.
+		\item Zważenie prętów lub odpowiadającym im próbkom, w celu wyliczenia gęstości materiału, z którego zostały wykonane.
+		\item Zarejestrowanie częstotliwości drgań harmonicznych dla prętów, przy pomocy programu Zelscope i mikrofonu przystawionego przy pręcie, przy uprzednio uderzeniu w ten pręt młotkiem.
+		\item Powtórzenie rejestracji częstotliwości dla wszystkich prętów.
+	\end{enumerate}
+	
+	\pagebreak
+	%KONIEC WSTEPU	
+	\section{Wyniki pomiarów}
+	\begin{figure}[!ht]
+		\begin{adjustwidth}{-1cm}{}
+			\def\arraystretch{1.3}
+			\centering
+			\begin{tabular}{|c|c|c|c|c|}
+				\hline
+				\parbox[c]{2cm}{\raggedright Materiał} & \begin{tabular}{c} Masa pręta\\ \mbox{[g]}\end{tabular} & \begin{tabular}{c} Długość próbki  \\ \mbox{[mm]}  \end{tabular}  & 
+				\begin{tabular}{c}	Objętość\\ \mbox{[$cm^3$]}  \end{tabular} & 
+				\begin{tabular}{c}	Gęstość \\ $ \left [\frac{kg}{m^3} \right ] $ \end{tabular}  \\
+				\hline
+				Miedź & 66 & 382 & 7,49 & 8811,75 \\
+				\hline
+				Stal (1) & 31 & 20 & 3,92 & 7908,16 \\
+				\hline
+				Stal (2) & 12 & 20  & 1,57  & 7643,31\\
+				\hline
+				Stal (3)& 5 & 20  & 0,72  & 6944,44 \\
+				\hline
+				Mosiądz & 74 & 311  & 8,91 & 8788,86\\
+				\hline
+				Aluminium & 24 & 440  & 8,63 & 2780,99\\
+				\hline
+				Szkło kwarcowe & - & -  & - & 2203\\
+				\hline		
+			\end{tabular}
+		\end{adjustwidth}
+	\end{figure}
+	
+	
+	\begin{figure}[!htb]
+		\begin{adjustwidth}{-1cm}{}
+			\def\arraystretch{1.3}
+			\centering
+			\begin{tabular}{|c|c|c|c|}
+				\cline{1-2}
+				\multicolumn{2}{|l|}{\begin{tabular}{c}Nr pręta 1 (miedź) $l = 1,8 [m]$\end{tabular}} & \multicolumn{2}{c}{}\\
+				\hline
+				\begin{tabular}{c} Nr harmonicznej  \end{tabular} & \begin{tabular}{c} Częstotliwość $f$ \\ \mbox{[HZ]}  \end{tabular}  & 
+				\begin{tabular}{c}	Długość fali $ \lambda$ \\ \mbox{[m]}  \end{tabular} &
+				\begin{tabular}{c} Prędkość fali $\upsilon$ \\ \mbox{[m/s]}  \end{tabular}  \\ 
+				\hline
+				1 & 990,89 & 3,6 & 3567,21 \\[2ex]
+				\hline
+				2  & 1976,59 & 1,8 & 3557,86 \\[2ex]
+				\hline
+				3 & 2982,95  & 1,2 & 3579,54 \\[2ex]
+				\hline
+				4 & 3956,61 & 0,9 & 3560,98 \\[2ex]
+				\hline
+				5 & 4948,17 & 0,72 & 3562,68 \\[2ex]
+				\hline
+				6 & 5924,12 & 0,6 & 3554,47 \\[2ex]
+				\hline
+				
+			\end{tabular}
+		\end{adjustwidth}
+			$$v=3563,79 \left [\frac{m}{s} \right ] $$ 
+			$$E=115,6 \left [GPa \right ] $$
+	\end{figure}
+	\begin{figure}[!htb]
+		\begin{adjustwidth}{-1cm}{}
+			\def\arraystretch{1.3}
+			\centering
+			\begin{tabular}{|c|c|c|c|}
+				\cline{1-2}
+				\multicolumn{2}{|l|}{\begin{tabular}{c}Nr pręta 2 (stal 1) $l = 1,8 [m]$\end{tabular}} & \multicolumn{2}{c}{}\\
+				\hline
+				\begin{tabular}{c} Nr harmonicznej  \end{tabular} & \begin{tabular}{c} Częstotliwość $f$ \\ \mbox{[HZ]}  \end{tabular}  & 
+				\begin{tabular}{c}	Długość fali $ \lambda$ \\ \mbox{[m]}  \end{tabular} &
+				\begin{tabular}{c} Prędkość fali $\upsilon$ \\ \mbox{[m/s]}  \end{tabular}  \\ 
+				\hline
+				1 & 1441,63 & 3,6 & 5189,87 \\[2ex]
+				\hline
+				2  & 2903,7 & 1,8 & 5226,66 \\[2ex]
+				\hline
+				3 & 4345,79  & 1,2 & 5214,95 \\[2ex]
+				\hline
+				4 & 5782,57 & 0,9 & 5204,31 \\[2ex]
+				\hline
+				5 & 7218,80 & 0,72 & 5197,54 \\[2ex]
+				\hline
+				6 & 8743,78 & 0,6 & 5246,27 \\[2ex]
+				\hline
+				
+			\end{tabular}
+			$$v=5213,27 \left [\frac{m}{s} \right ] $$
+			$$E=213 \left [GPa \right ] $$
+		\end{adjustwidth}
+	\end{figure}
+	\begin{figure}[!htb]
+		\begin{adjustwidth}{-1cm}{}
+			\def\arraystretch{1.3}
+			\centering
+			\begin{tabular}{|c|c|c|c|}
+				\cline{1-2}
+				\multicolumn{2}{|l|}{\begin{tabular}{c}Nr pręta 3 (stal 2) $l = 1,8 [m]$\end{tabular}} & \multicolumn{2}{c}{}\\
+				\hline
+				\begin{tabular}{c} Nr harmonicznej  \end{tabular} & \begin{tabular}{c} Częstotliwość $f$ \\ \mbox{[HZ]}  \end{tabular}  & 
+				\begin{tabular}{c}	Długość fali $ \lambda$ \\ \mbox{[m]}  \end{tabular} &
+				\begin{tabular}{c} Prędkość fali $\upsilon$ \\ \mbox{[m/s]}  \end{tabular}  \\ 
+				\hline
+				1 & 1432,65 & 3,6 & 5157,54 \\[2ex]
+				\hline
+				2  & 2889,74 & 1,8 & 5201,52 \\[2ex]
+				\hline
+				3 & 4290,51  & 1,2 & 5148,61 \\[2ex]
+				\hline
+				4 & 5766,34 & 0,9 & 5189,71 \\[2ex]
+				\hline
+				5 & 7142,19 & 0,72 & 5142,38 \\[2ex]
+				\hline
+				6 & 8526,08 & 0,6 & 5115,65 \\[2ex]
+				\hline
+				
+			\end{tabular}
+			$$v=5159,24 \left [\frac{m}{s} \right ] $$
+			$$E=203,31 \left [GPa \right ] $$
+		\end{adjustwidth}
+	\end{figure}
+	
+	
+	\begin{figure}[!htb]
+		\begin{adjustwidth}{-1cm}{}
+			\def\arraystretch{1.3}
+			\centering
+			\begin{tabular}{|c|c|c|c|}
+				\cline{1-2}
+				\multicolumn{2}{|l|}{\begin{tabular}{c}Nr pręta 4 (stal 3) $l = 1,8 [m]$\end{tabular}} & \multicolumn{2}{c}{}\\
+				\hline
+				\begin{tabular}{c} Nr harmonicznej  \end{tabular} & \begin{tabular}{c} Częstotliwość $f$ \\ \mbox{[HZ]}  \end{tabular}  & 
+				\begin{tabular}{c}	Długość fali $ \lambda$ \\ \mbox{[m]}  \end{tabular} &
+				\begin{tabular}{c} Prędkość fali $\upsilon$ \\ \mbox{[m/s]}  \end{tabular}  \\ 
+				\hline
+				1 & 1538,47 & 3,6 & 5538,51 \\[2ex]
+				\hline
+				2  & 3101,527 & 1,8 & 5582,73 \\[2ex]
+				\hline
+				3 & 4663,85  & 1,2 & 5596,62 \\[2ex]
+				\hline
+				4 & 6267,98 & 0,9 & 5641,18 \\[2ex]
+				\hline
+				5 & 7659,5 & 0,72 & 5514,84 \\[2ex]
+				\hline
+				6 & 9247,7 & 0,6 & 5548,72 \\[2ex]
+				\hline
+				
+			\end{tabular}
+			$$v=5570,43 \left [\frac{m}{s} \right ] $$
+			$$E=213,02 \left [GPa \right ] $$
+		\end{adjustwidth}
+	\end{figure}
+	
+	\begin{figure}[!htb]
+		\begin{adjustwidth}{-1cm}{}
+			\def\arraystretch{1.3}
+			\centering
+			\begin{tabular}{|c|c|c|c|}
+				\cline{1-2}
+				\multicolumn{2}{|l|}{\begin{tabular}{c}Nr pręta 5 (mosiądz) $l = 1[m]$\end{tabular}} & \multicolumn{2}{c}{}\\
+				\hline
+				\begin{tabular}{c} Nr harmonicznej  \end{tabular} & \begin{tabular}{c} Częstotliwość $f$ \\ \mbox{[HZ]}  \end{tabular}  & 
+				\begin{tabular}{c}	Długość fali $ \lambda$ \\ \mbox{[m]}  \end{tabular} &
+				\begin{tabular}{c} Prędkość fali $\upsilon$ \\ \mbox{[m/s]}  \end{tabular}  \\ 
+				\hline
+				1 & 1810,98 & 2 & 3621,97 \\[2ex]
+				\hline
+				2 & 3687,84  & 1 & 3687,84 \\[2ex]
+				\hline
+				3 & 5370,8 & 0,67 & 3598,44 \\[2ex]
+				\hline
+				4 & 7384,42  & 0,5 & 3692,21 \\[2ex]
+				\hline
+				5 & 9281,92  & 0,4 &3712,77  \\[2ex]
+				\hline
+				6 & 10731,41 & 0,34 &3648,68  \\[2ex]
+				\hline
+				
+			\end{tabular}
+		\end{adjustwidth}
+		$$v=3660,32 \left [\frac{m}{s} \right ] $$
+		$$E=106,95 \left [GPa \right ] $$
+	\end{figure}
+	
+	\begin{figure}[!htb]
+		\begin{adjustwidth}{-1cm}{}
+			\def\arraystretch{1.3}
+			\centering
+			\begin{tabular}{|c|c|c|c|}
+				\cline{1-2}
+				\multicolumn{2}{|l|}{\begin{tabular}{c}Nr pręta 6 (aluminium) $l = 1[m]$\end{tabular}} & \multicolumn{2}{c}{}\\
+				\hline
+				\begin{tabular}{c} Nr harmonicznej  \end{tabular} & \begin{tabular}{c} Częstotliwość $f$ \\ \mbox{[HZ]}  \end{tabular}  & 
+				\begin{tabular}{c}	Długość fali $ \lambda$ \\ \mbox{[m]}  \end{tabular} &
+				\begin{tabular}{c} Prędkość fali $\upsilon$ \\ \mbox{[m/s]}  \end{tabular}  \\ 
+				\hline
+				1 & 2530,72 & 2 & 5061,45 \\[2ex]
+				\hline
+				2 & 5068,76  & 1 & 5068,76 \\[2ex]
+				\hline
+				3 & 7510,1 & 0,67 & 5031,77 \\[2ex]
+				\hline
+				4 & 10188,78  & 0,5 & 5094,39 \\[2ex]
+				\hline
+				5 & 12680,3  & 0,4 &5072,12  \\[2ex]
+				\hline
+				6 & 14940,35 & 0,34 &5079,72  \\[2ex]
+				\hline
+				
+			\end{tabular}
+		\end{adjustwidth}
+		$$v=5068,04 \left [\frac{m}{s} \right ] $$
+		$$E=71,24 \left [GPa \right ] $$
+	\end{figure}
+	
+	\begin{figure}[!htb]
+		\begin{adjustwidth}{-1cm}{}
+			\def\arraystretch{1.3}
+			\centering
+			\begin{tabular}{|c|c|c|c|}
+				\cline{1-2}
+				\multicolumn{2}{|l|}{\begin{tabular}{c}Nr pręta 7 (szkło kwarcowe) $l = 1[m]$\end{tabular}} & \multicolumn{2}{c}{}\\
+				\hline
+				\begin{tabular}{c} Nr harmonicznej  \end{tabular} & \begin{tabular}{c} Częstotliwość $f$ \\ \mbox{[HZ]}  \end{tabular}  & 
+				\begin{tabular}{c}	Długość fali $ \lambda$ \\ \mbox{[m]}  \end{tabular} &
+				\begin{tabular}{c} Prędkość fali $\upsilon$ \\ \mbox{[m/s]}  \end{tabular}  \\ 
+				\hline
+				1 & 2809,61 & 2 & 5619,23 \\[2ex]
+				\hline
+				2 & 5654,63  & 1 & 5654,63 \\[2ex]
+				\hline
+				3 & 8445,62 & 0,67 & 5658,56 \\[2ex]
+				\hline
+				4 & 11277,9  & 0,5 & 5638,95 \\[2ex]
+				\hline
+				5 & 14261,52  & 0,4 &5704,61  \\[2ex]
+				\hline
+				6 & 16646,21 & 0,34 &5659,71  \\[2ex]
+				\hline
+				
+			\end{tabular}
+		\end{adjustwidth}
+		$$v=5655,95 \left [\frac{m}{s} \right ] $$
+		$$E=69,56 \left [GPa \right ] $$
+	\end{figure}
+	
+	\clearpage
+	\section{Opracowanie wyników}
+	Dla obliczeń błędów pomiaru przyjęto następujące niepewności:\\
+	Dla długości pręta: $u(l)=1 [mm]$\\
+	Dla promienia: $u(r)=0,1[mm]$\\
+	Dla masy próbki:$u(m)=1 [g]$\\
+	Dla częstotliwości:$u(f)=25 [Hz]$\\
+	
+	Niepewność gęstości:
+	$$ u(\rho)=\sqrt{\bigg(\frac{\partial \rho}{\partial m}u(m)\bigg)^2+\bigg(\frac{\partial \rho}{\partial l}u(l)\bigg)^2+\bigg(\frac{\partial \rho}{\partial r}u(r)\bigg)^2} = \sqrt{\bigg(\frac{1}{l\Pi r^2}u(m)\bigg)^2+\bigg(\frac{-m}{l^2 \Pi r^2}u(l)\bigg)^2+\bigg(\frac{-2m}{l\Pi r^3}u(r)\bigg)^2}$$
+	
+	Niepewność długości fali:
+	$$ u(\lambda)=\sqrt{\bigg(\frac{2}{n}u(l)\bigg)^2}$$
+	
+	Niepewność prędkości fali:
+	$$ u(v)=\sqrt{\bigg(\frac{\partial v}{\partial f}u(f)\bigg)^2+\bigg(\frac{\partial v}{\partial \lambda}u(\lambda)\bigg)^2}=\sqrt{\bigg(\lambda u(f)\bigg)^2+\bigg(f u(\lambda)\bigg)^2}$$
+	
+	Niepewność modułu Younga:
+	$$ u(E)=\sqrt{\bigg(\frac{\partial E}{\partial \rho}u(\rho)\bigg)^2+\bigg(\frac{\partial E}{\partial v}u(v)\bigg)^2} =
+	\sqrt{\bigg(v^2 u(\rho)\bigg)^2+\bigg(2 \rho v u(v)\bigg)^2}$$
+	
+\begin{figure}[!htb]
+
+		\def\arraystretch{1.3}
+		\centering
+\begin{tabular}{|c|c|c|c|}
+	
+	\hline
+	\begin{tabular}{c} Materiał  \end{tabular} & \begin{tabular}{c} Niepewność gęstości  \\ $u(\rho) \left [ \frac{kg}{m^3} \right ] $  \end{tabular}  & 
+	\begin{tabular}{c}	Niepewność prędkość fali\\ $u(\upsilon) \left [ \frac{m}{s} \right ]$ \end{tabular} &
+	\begin{tabular}{c} Niepewność modułu Younga  \\ $u(E) \left [ Gpa \right ]$  \end{tabular}  \\ 
+	\hline
+	Miedź & 67,98 & 90,02 & 5,71 \\[0.3ex]
+	\hline
+	Stal (1) & 471,25  & 90,05 & 14,8 \\[0.3ex]
+	\hline
+	Stal (2) & 377,63 &90,04 & 12,31 \\[0.3ex]
+	\hline
+	Stal (3) & 57,9  & 90,05 & 7,19 \\[0.3ex]
+	\hline
+	Mosiądz & 58,25  & 50,13 &3,32  \\[0.3ex]
+	\hline
+	Aluminium & 1444,15 & 50,25 &37,38  \\[0.3ex]
+	\hline
+	Szkło kwarcowe & 0 (wartość tabelaryczna) & 50,31 &1,25  \\[0.3ex]
+	\hline
+\end{tabular}
+\end{figure}
+
+	\def\arraystretch{1.3}
+	
+	\begin{tabular}{|c|c|c|c|}
+		
+		\hline
+		Materiał & \begin{tabular}{c} Wartość tabelaryczna  \\ $\left [ Gpa \right ]$  \end{tabular}  & \begin{tabular}{c} Wartość wyznaczona  \\ $\left [ Gpa \right ]$  \end{tabular} & \begin{tabular}{c} Zgodność  \\ niepewność rozszerzona $k=2$  \end{tabular} \\
+		\hline
+		Miedź & 110-130 & 115,6 & TAK \\[0.3ex]
+		\hline
+		Stal (1) & 205-210  &213  &TAK \\[0.3ex]
+		\hline
+		Stal (2) & 205-210 &203,31& TAK \\[0.3ex]
+		\hline
+		Stal (3) & 205-210  & 213,02 & TAK \\[0.3ex]
+		\hline
+		Mosiądz & 100  & 106,95 &TAK  \\[0.3ex]
+		\hline
+		Aluminium & 69 & 71,24 &TAK  \\[0.3ex]
+		\hline
+		Szkło kwarcowe & 70 & 69,56 &TAK  \\[0.3ex]
+		\hline
+	\end{tabular}
+
+	
+	\section{Wnioski}
+	Na podstawie wymiarów pręta oraz pomiaru częstotliwości przy pomocy programu Zelscope wyznaczyliśmy gęstość materiału oraz prędkość rozchodzenia się w nim fali. Dzięki temu obliczyliśmy wartość modułu Younga.
+	Następnie obliczyliśmy niepewność standardową wartości modułu Younga dla każdego z materiałów oraz niepewność rozszerzoną. Wszystkie wyznaczone wartości modułu Younga zgadzają się z wartościami tabelarycznymi.
+	
+\end{document}
