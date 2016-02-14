@@ -1,0 +1,27 @@
+\subsubsection{Pomiar długości drgań i twierdzenie Steinera}
+$$I_0=\frac{1,36*9.81*0,13*1,033^2}{4\pi ^2}=0,04693~[kg*m^2]$$
+Niepewność $u(I_0)$:
+\begin{equation*}
+\begin{split}
+\frac{u(I_o)}{I_0}&=\sqrt{\left(\frac{0.00058}{1,36}\right) ^2+\left( \frac{0.00058}{0,13}\right)^2+\left(2 \frac{0.0016}{1,033}\right)^2}\\
+&= \sqrt{1,819*10^{-7}+1,99*10^{-5}+9,6*10^{-6}} = \sqrt{2,97*10^{-5}} = 0,00545
+\end{split}
+\end{equation*}
+Stąd $u(I_0)=0,00026~[kg*m^2]$
+\newline
+
+\noindent
+Z twierdzenia Steinera (\ref{eq:steiner}) mamy dla środka ciała:
+$$I_s=0,04693-1,36*0,13^2=0,0239~[kg*m^2]$$
+a niepewność $I_s$ liczymy ze wzoru:
+$$u(I_s)=\sqrt{\left( 0,00026\right)^2+\left(0,13^2*0,00058 \right)^2+\left( -2*0,13*1,36*0,00058\right)^2}=0,00033~[kg*m^2]$$
+\subsubsection{Wzory tablicowe}
+$$I_{s}^{geom}=\frac{m(R_z^2+R_w^2)}{2}=\frac{1,36(0,14^2+0,125^2)}{2}=0,024~[kg*m^2]$$
+Niepewność $u(I_{s}^{geom})$:
+\begin{equation*}
+\begin{split}
+u(I_{s}^{geom})&=\sqrt{\left (\frac{R_z^2+R_w^2}{2}*u(m) \right )^2+\left (mR_z*u(R_z) \right )^2+\left (mR_w*u(R_w) \right )^2}\\
+&=\sqrt{\left (\frac{0,14^2+0,125^2}{2}*0,00058 \right )^2+\left (1,36*0,14*0,00058 \right )^2+\left (1,36*0,125*0,00058 \right )^2}\\
+&=\sqrt{10^{-10}+1,2*10^{-8}+9,7*10^{-9}}=0,000148~[kg*m^2]
+\end{split}
+\end{equation*}

@@ -1,0 +1,156 @@
+\documentclass[a4paper,10pt,twoside]{article}
+%\usepackage{amssymb}
+%\usepackage{amsthm}
+\usepackage[polish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{indentfirst}
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{wrapfig}
+%\usepackage{xcolor}
+\usepackage{amsmath}
+
+\begin{document}
+
+\newgeometry{top=1.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm}
+\begin{center}
+\bgroup
+\def\arraystretch{1.5}
+\begin{tabular}{|c|c|c|c|c|c|}
+	\hline
+	EAIiIB & \multicolumn{2}{|c|}{\begin{tabular}{@{}c@{}}Marcin Nalepa \\ Przemysław Trybała\end{tabular}} & Rok II & Grupa 5 & Zespół 3 \\
+	\hline
+	\multicolumn{3}{|c|}{\begin{tabular}{c}Temat: \\ Wahadło fizyczne \end{tabular}} & 
+	\multicolumn{3}{|c|}{\begin{tabular}{c}Numer ćwiczenia: \\ 1 \end{tabular}} \\
+	\hline
+	\begin{tabular}{@{}c@{}}Data wykonania\\09.12.2015 r.\end{tabular} & \begin{tabular}{@{}c@{}}Data oddania\\13.01.2016 r.\end{tabular} & 
+	\begin{tabular}{c}Zwrot do\\poprawki\\\phantom{data} \end{tabular} & \begin{tabular}{c}Data oddania\\\phantom{data}\end{tabular} &
+	\begin{tabular}{c}Data zaliczenia\\\phantom{data}\end{tabular} & \begin{tabular}{c}Ocena\\\phantom{ocena}\end{tabular} \\[4ex]
+	\hline
+\end{tabular}
+\egroup
+\end{center}
+
+\section{Cel ćwiczenia}
+Wyznaczenie momentów bezwładności brył sztywnych przez pomiar okresu drgań wahadła oraz na podstawie wymiarów geometrycznych.
+
+\section{Wstęp teoretyczny}
+\emph{Wahadłem fizycznym} nazywamy bryłę sztywną mogącą obracać się swobodnie wokół osi obrotu $O$
+nie przechodzącej jednak przez środek masy $S$ tej bryły.
+
+\begin{wrapfigure}{r}{0.4\textwidth}
+	%\vspace{-30pt}
+	\begin{center}
+		\includegraphics[scale=0.7]{wahadlo}
+	\end{center}
+	%\vspace{-20pt}
+	\caption{Rysunek poglądowy doświadczenia}
+	\label{fig:wahadlo}
+\end{wrapfigure}
+
+Wahadło wychylone z punktu równowagi, a następnie puszczone swobodnie, będzie wykonywać drgania zwane ruchem wahadłowym.
+Ponieważ ciało będzie poruszać się wokół osi obrotu $O$, ruch ten będzie opisywać druga zasada dynamiki dla ruchu obrotowego
+$I\varepsilon=\mathbf{M}$ gdzie $I$ - moment bezwładności, $\varepsilon$ - przyspieszenie kątowe, $\mathbf{M}$ - moment siły.
+
+W rozpatrywanym doświadczeniu moment siły powstaje pod wpływem siły ciężkości i dla wychylenia $\theta$ jest równy $\mathbf{M} = mga\sin\theta$,
+gdzie $a$ - odległość osi obrotu $O$ od środka masy $S$. Stąd równanie ruchu wahadła można zapisać jako
+\begin{equation}
+\label{eq:wahadlo}
+I_0\frac{d^2\theta}{dt^2}=-mga\sin\theta
+\end{equation}
+gdzie $I_0$ - moment bezwładności względem osi obrotu przechodzącej przez punkt $O$. Jeśli ograniczymy amplitudę drgań wahadła do kilku stopni,
+możemy, zgodzie z twierdzeniem Taylora, przyliżyć sinusa jego argumentem $\sin\theta\approx\theta$. Wtedy rozwiązanie wzoru (\ref{eq:wahadlo})
+przyjmuje postać
+\begin{equation}
+\label{eq:oscylator}
+\theta = A \cos\left(\omega_0t+\alpha\right)
+\end{equation}
+i przedstawia ruch harmoniczny. Amplituda $A$ oraz faza drgań $\alpha$ zależą od warunków początkowych, natomiast okres drgań $T$ jest związany tylko
+z częstością $\omega_0=2\pi/T$ i wynosi
+\begin{equation}
+T = 2\pi\sqrt{\frac{I_0}{mga}}
+\end{equation}
+co po przekształceniu daje wzór roboczy na moment bezwładności $I_0$
+\begin{equation}
+\label{eq:bezwladnosc}
+I_0 = \frac{T^2mga}{4\pi^2}
+\end{equation}
+
+Wzór (\ref{eq:bezwladnosc}) jest pierwszą metodą na obliczenie momentu bezwładności wahadła fizycznego. Drugi sposób to zastosowanie
+twierdzenia Steinera
+\begin{equation}
+\label{eq:steiner}
+I_0 = I_s + ma^2
+\end{equation}
+do znanej wartości $I_s$ odczytanej z tablic.
+
+\section{Opis doświadczenia}
+Do doświadczenia zostały dostarczone 2 obiekty, pierścień i pręt. Na początku zostały przeprowadzone pomiary potrzebnych wymiarów
+zaznaczonych na rysunku (\ref{fig:prety}) oraz masy. Wyniki wraz z niepewnościami zapisano w dołączonych tablekach. 
+\begin{figure}[H]
+\centerline{\includegraphics[scale=0.5]{prety}}
+\label{fig:prety}
+\end{figure}
+
+Następnie jeden z obiektów zamontowano na statywie i zmierzono czas trwania określonej ilości okresów. Stąd wyznaczono okres 1 drgania.
+Pomiary zostały wykonane także dla drugiego obiektu. Wyniki zapisano w dołączonych tabelach.
+
+\newpage
+\section{Opracowanie wyników}
+\noindent
+Wzory wykorzystane w obliczeniach poniżej:
+\begin{itemize}
+\item Moment bezwładności: $I_0=\frac{mgaT^2}{4\pi ^2}$
+\item Niepewność $I_0$: $\frac{u(I_o)}{I_0}=\sqrt{\left (\frac{u(m)}{m}\right ) ^2+\left ( \frac{u(a)}{a}\right )^2+\left (2 \frac{u(T_0)}{T_0}\right )^2}$
+\item Moment bezwładności z twierdzenia Steinera (\ref{eq:steiner}): $I_s=I_0-ma^2$
+\item Niepewność $I_S$: $u(I_s)=\sqrt{\left( u(I_0)\right)^2+\left(a^2u(m) \right)^2+\left( -2amu(m)\right)^2}$
+\end{itemize}
+
+\subsection{Pręt}
+\input{opracowanie_pret}
+
+\newpage
+\subsection{Pierścień}
+\input{opracowanie_pierscien}
+
+\newpage
+\subsection{Sprawdzenie wyników}
+\input{niepewnosc_rozszerzona}
+
+\section{Podsumowanie}
+Momenty bezwładności obliczone z pomiaru czasu drgań wahadła wynoszą odpowiednio $0,0305 \pm 0,0004~[kg*m^2]$ dla pręta i $0,0239 \pm 0,0003~[kg*m^2]$ dla pierścienia.
+Wartości momentu bezwładności mieszczą się w niepewności rozszerzonej. Oznacza to, że pomiary były wykonane na tyle dokładnie, że wyniki
+zgadzają się z wartościami oczekiwanymi. W obu przypadkach niepewności liczone ze wzorów matematycznych charakteryzują się większą dokładnością, a więc
+są pewniejsze niż wartości doświadczalne. Taki stan rzeczy może być spowodowany tym, że w przypadku pomiaru okresu drgań pojawia się błąd systematyczny
+związany z tłumieniem drgań przez powietrze. 
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
